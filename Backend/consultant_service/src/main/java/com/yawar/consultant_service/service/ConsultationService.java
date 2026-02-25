@@ -1,5 +1,8 @@
 package com.yawar.consultant_service.service;
 
+import com.yawar.consultant_service.dto.CreateDoctorReviewRequest;
+import com.yawar.consultant_service.dto.DoctorRatingSummaryResponse;
+import com.yawar.consultant_service.dto.DoctorReviewResponse;
 import com.yawar.consultant_service.dto.CreateRequestDto;
 import com.yawar.consultant_service.model.Consultation;
 
@@ -19,7 +22,15 @@ public interface ConsultationService {
 
     List<Consultation> getByPatient(String patientId);
 
-    List<Consultation> getPendingBySpecialization(String specialization);
+    List<Consultation> getPendingBySpecialization(String specialization, String doctorId);
 
     List<Consultation> getByDoctor(String doctorId);
+
+    DoctorReviewResponse upsertDoctorReview(String doctorId, CreateDoctorReviewRequest request);
+
+    List<DoctorReviewResponse> getDoctorReviews(String doctorId);
+
+    List<DoctorReviewResponse> getPatientReviews(String patientId);
+
+    DoctorRatingSummaryResponse getDoctorRatingSummary(String doctorId);
 }

@@ -13,7 +13,5 @@ public class PaymentSuccessEvent {
     private String paymentType;
     private Double amount;
     private String razorpayPaymentId;
-
-
 }
 

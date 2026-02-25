@@ -1,6 +1,7 @@
 package com.yawar.Auth_service.service;
 
 import com.yawar.Auth_service.config.jwt.JwtUtil;
+import com.yawar.Auth_service.dto.AuthResponse;
 import com.yawar.Auth_service.dto.AuthRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -15,7 +16,7 @@ public class AuthService {
     private final PasswordEncoder encoder;
     private final JwtUtil jwtUtil;
 
-    public String login(AuthRequest request) {
+    public AuthResponse login(AuthRequest request) {
 
         var user = restTemplate.getForObject(
                 "http://USER-SERVICE/user/email/" + request.getEmail(),
@@ -32,7 +33,9 @@ public class AuthService {
             throw new RuntimeException("Invalid password");
         }
 
-        return jwtUtil.generateToken(user.getEmail());
+        return new AuthResponse(
+                jwtUtil.generateToken(user.getEmail()),
+                user
+        );
     }
 }
-

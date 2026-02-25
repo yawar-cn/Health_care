@@ -8,13 +8,14 @@ import java.util.List;
 
 @Repository
 public interface ConsultationRepo extends MongoRepository<Consultation, String> {
-
-    List<Consultation> findBySpecializationAndStatus(
+    List<Consultation> findBySpecializationAndStatusAndDoctorIdIsNull(
             String specialization,
             ConsultationStatus status);
-
+    List<Consultation> findBySpecializationAndStatusAndDoctorId(
+            String specialization,
+            ConsultationStatus status,
+            String doctorId);
     List<Consultation> findByPatientId(String patientId);
     List<Consultation> findByDoctorId(String doctorId);
-
     Consultation getById(String id);
 }

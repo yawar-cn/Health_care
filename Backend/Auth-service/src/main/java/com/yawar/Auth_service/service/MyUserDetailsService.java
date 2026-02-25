@@ -18,7 +18,7 @@ public class MyUserDetailsService implements UserDetailsService {
             throws UsernameNotFoundException {
 
         UserDTO user = restTemplate.getForObject(
-                "http://USER-SERVICE/users/email/" + email,
+                "http://USER-SERVICE/user/email/" + email,
                 UserDTO.class
         );
 

@@ -24,5 +24,7 @@ public class Users {
     private Role role;
     private String specialization;  // for doctors
     private Integer experience;
+    private Double consultationFee;
+    @Column(columnDefinition = "LONGTEXT")
+    private String photoUrl;
 }
-

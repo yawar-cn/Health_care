@@ -1,0 +1,585 @@
+{
+  "generatedAt": "2026-02-25T07:28:07.636Z",
+  "backendRoot": "/Users/asiyahmunawwar/Desktop/MS Arch",
+  "services": [
+    {
+      "id": "auth-service",
+      "name": "AUTH-SERVICE",
+      "baseUrl": "http://localhost:8082",
+      "port": 8082,
+      "endpoints": [
+        {
+          "id": "post-auth-login",
+          "method": "POST",
+          "path": "/auth/login",
+          "fields": [
+            {
+              "name": "email",
+              "in": "body",
+              "type": "string"
+            },
+            {
+              "name": "password",
+              "in": "body",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "user-service",
+      "name": "USER-SERVICE",
+      "baseUrl": "http://localhost:8081",
+      "port": 8081,
+      "endpoints": [
+        {
+          "id": "get-userhealth",
+          "method": "GET",
+          "path": "/userhealth",
+          "fields": []
+        },
+        {
+          "id": "post-user-register",
+          "method": "POST",
+          "path": "/user/register",
+          "fields": [
+            {
+              "name": "name",
+              "in": "body",
+              "type": "string"
+            },
+            {
+              "name": "email",
+              "in": "body",
+              "type": "string"
+            },
+            {
+              "name": "phone",
+              "in": "body",
+              "type": "string"
+            },
+            {
+              "name": "password",
+              "in": "body",
+              "type": "string"
+            },
+            {
+              "name": "role",
+              "in": "body",
+              "type": "string"
+            },
+            {
+              "name": "specialization",
+              "in": "body",
+              "type": "string"
+            },
+            {
+              "name": "experience",
+              "in": "body",
+              "type": "number"
+            },
+            {
+              "name": "consultationFee",
+              "in": "body",
+              "type": "number"
+            },
+            {
+              "name": "photoUrl",
+              "in": "body",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "id": "get-user-email-email",
+          "method": "GET",
+          "path": "/user/email/{email}",
+          "fields": [
+            {
+              "name": "email",
+              "in": "path",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "id": "get-user-id",
+          "method": "GET",
+          "path": "/user/{id}",
+          "fields": [
+            {
+              "name": "id",
+              "in": "path",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "id": "get-user-specializations",
+          "method": "GET",
+          "path": "/user/specializations",
+          "fields": []
+        },
+        {
+          "id": "get-user-doctors",
+          "method": "GET",
+          "path": "/user/doctors",
+          "fields": []
+        },
+        {
+          "id": "put-user-id-photo",
+          "method": "PUT",
+          "path": "/user/{id}/photo",
+          "fields": [
+            {
+              "name": "id",
+              "in": "path",
+              "type": "string"
+            },
+            {
+              "name": "photoUrl",
+              "in": "body",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "id": "post-user-id-photo-upload",
+          "method": "POST",
+          "path": "/user/{id}/photo/upload",
+          "fields": [
+            {
+              "name": "id",
+              "in": "path",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "id": "get-user-photos-filename",
+          "method": "GET",
+          "path": "/user/photos/{filename:.+}",
+          "fields": [
+            {
+              "name": "filename",
+              "in": "path",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "id": "put-user-id-profile",
+          "method": "PUT",
+          "path": "/user/{id}/profile",
+          "fields": [
+            {
+              "name": "id",
+              "in": "path",
+              "type": "string"
+            },
+            {
+              "name": "name",
+              "in": "body",
+              "type": "string"
+            },
+            {
+              "name": "phone",
+              "in": "body",
+              "type": "string"
+            },
+            {
+              "name": "consultationFee",
+              "in": "body",
+              "type": "number"
+            }
+          ]
+        },
+        {
+          "id": "put-user-id-consultation-fee",
+          "method": "PUT",
+          "path": "/user/{id}/consultation-fee",
+          "fields": [
+            {
+              "name": "id",
+              "in": "path",
+              "type": "string"
+            },
+            {
+              "name": "consultationFee",
+              "in": "body",
+              "type": "number"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "consultant-service",
+      "name": "CONSULTANT-SERVICE",
+      "baseUrl": "http://localhost:8083",
+      "port": 8083,
+      "endpoints": [
+        {
+          "id": "post-consultations",
+          "method": "POST",
+          "path": "/consultations",
+          "fields": [
+            {
+              "name": "patientId",
+              "in": "body",
+              "type": "string"
+            },
+            {
+              "name": "doctorId",
+              "in": "body",
+              "type": "string"
+            },
+            {
+              "name": "specialization",
+              "in": "body",
+              "type": "string"
+            },
+            {
+              "name": "description",
+              "in": "body",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "id": "put-consultations-id-accept",
+          "method": "PUT",
+          "path": "/consultations/{id}/accept",
+          "fields": [
+            {
+              "name": "id",
+              "in": "path",
+              "type": "string"
+            },
+            {
+              "name": "doctorId",
+              "in": "query",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "id": "put-consultations-id-prescription",
+          "method": "PUT",
+          "path": "/consultations/{id}/prescription",
+          "fields": [
+            {
+              "name": "id",
+              "in": "path",
+              "type": "string"
+            },
+            {
+              "name": "medicineIds",
+              "in": "body",
+              "type": "list-string"
+            },
+            {
+              "name": "precautions",
+              "in": "body",
+              "type": "string"
+            },
+            {
+              "name": "notes",
+              "in": "body",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "id": "put-consultations-id-paid",
+          "method": "PUT",
+          "path": "/consultations/{id}/paid",
+          "fields": [
+            {
+              "name": "id",
+              "in": "path",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "id": "get-consultations-id",
+          "method": "GET",
+          "path": "/consultations/{id}",
+          "fields": [
+            {
+              "name": "id",
+              "in": "path",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "id": "get-consultations-patient-patientid",
+          "method": "GET",
+          "path": "/consultations/patient/{patientId}",
+          "fields": [
+            {
+              "name": "patientId",
+              "in": "path",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "id": "get-consultations-pending",
+          "method": "GET",
+          "path": "/consultations/pending",
+          "fields": [
+            {
+              "name": "specialization",
+              "in": "query",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "id": "get-consultations-doctor-doctorid",
+          "method": "GET",
+          "path": "/consultations/doctor/{doctorId}",
+          "fields": [
+            {
+              "name": "doctorId",
+              "in": "path",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "id": "post-consultations-doctors-doctorid-reviews",
+          "method": "POST",
+          "path": "/consultations/doctors/{doctorId}/reviews",
+          "fields": [
+            {
+              "name": "doctorId",
+              "in": "path",
+              "type": "string"
+            },
+            {
+              "name": "patientId",
+              "in": "body",
+              "type": "string"
+            },
+            {
+              "name": "consultationId",
+              "in": "body",
+              "type": "string"
+            },
+            {
+              "name": "rating",
+              "in": "body",
+              "type": "number"
+            },
+            {
+              "name": "review",
+              "in": "body",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "id": "get-consultations-doctors-doctorid-reviews",
+          "method": "GET",
+          "path": "/consultations/doctors/{doctorId}/reviews",
+          "fields": [
+            {
+              "name": "doctorId",
+              "in": "path",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "id": "get-consultations-doctors-doctorid-rating",
+          "method": "GET",
+          "path": "/consultations/doctors/{doctorId}/rating",
+          "fields": [
+            {
+              "name": "doctorId",
+              "in": "path",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "id": "get-consultations-reviews-patient-patientid",
+          "method": "GET",
+          "path": "/consultations/reviews/patient/{patientId}",
+          "fields": [
+            {
+              "name": "patientId",
+              "in": "path",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "medicine-service",
+      "name": "MEDICINE-SERVICE",
+      "baseUrl": "http://localhost:8084",
+      "port": 8084,
+      "endpoints": [
+        {
+          "id": "post-medicines",
+          "method": "POST",
+          "path": "/medicines",
+          "fields": [
+            {
+              "name": "id",
+              "in": "body",
+              "type": "number"
+            },
+            {
+              "name": "name",
+              "in": "body",
+              "type": "string"
+            },
+            {
+              "name": "manufacturer",
+              "in": "body",
+              "type": "string"
+            },
+            {
+              "name": "description",
+              "in": "body",
+              "type": "string"
+            },
+            {
+              "name": "price",
+              "in": "body",
+              "type": "number"
+            },
+            {
+              "name": "stock",
+              "in": "body",
+              "type": "number"
+            },
+            {
+              "name": "category",
+              "in": "body",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "id": "get-medicines",
+          "method": "GET",
+          "path": "/medicines",
+          "fields": []
+        },
+        {
+          "id": "get-medicines-id",
+          "method": "GET",
+          "path": "/medicines/{id}",
+          "fields": [
+            {
+              "name": "id",
+              "in": "path",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "id": "post-medicines-bulk",
+          "method": "POST",
+          "path": "/medicines/bulk",
+          "fields": [
+            {
+              "name": "ids",
+              "in": "body",
+              "type": "list-number",
+              "helper": "Comma-separated values"
+            }
+          ]
+        },
+        {
+          "id": "get-medicines-search",
+          "method": "GET",
+          "path": "/medicines/search",
+          "fields": [
+            {
+              "name": "name",
+              "in": "query",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "payment-service",
+      "name": "PAYMENT-SERVICE",
+      "baseUrl": "http://localhost:8086",
+      "port": 8086,
+      "endpoints": [
+        {
+          "id": "post-payments-create-order",
+          "method": "POST",
+          "path": "/payments/create-order",
+          "fields": [
+            {
+              "name": "referenceId",
+              "in": "body",
+              "type": "string"
+            },
+            {
+              "name": "paymentType",
+              "in": "body",
+              "type": "string"
+            },
+            {
+              "name": "amount",
+              "in": "body",
+              "type": "number"
+            }
+          ]
+        },
+        {
+          "id": "post-payments-verify",
+          "method": "POST",
+          "path": "/payments/verify",
+          "fields": [
+            {
+              "name": "razorpayOrderId",
+              "in": "body",
+              "type": "string"
+            },
+            {
+              "name": "razorpayPaymentId",
+              "in": "body",
+              "type": "string"
+            },
+            {
+              "name": "razorpaySignature",
+              "in": "body",
+              "type": "string"
+            },
+            {
+              "name": "referenceId",
+              "in": "body",
+              "type": "string"
+            },
+            {
+              "name": "paymentType",
+              "in": "body",
+              "type": "string"
+            },
+            {
+              "name": "amount",
+              "in": "body",
+              "type": "number"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

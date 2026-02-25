@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal" created-in="IU-253.30387.90">
+    <data-source name="consultation_db@cluster0.pdmomyb.mongodb.net" uuid="48523fcf-9f2e-4cba-b8fe-2f85e15b9c1f">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MONGO" />
+      <user-name>hussainyawar140504_db_user</user-name>
+      <schema-mapping />
+    </data-source>
+    <data-source name="health_care@localhost" uuid="554ce9a8-a864-4079-bf6d-86460c562221">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" />
+      <user-name>root</user-name>
+      <schema-mapping />
+    </data-source>
+    <data-source name="medicine_db@localhost" uuid="20b472e7-c811-4674-83d8-8e4c69cd77fa">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" />
+      <user-name>root</user-name>
+      <schema-mapping />
+    </data-source>
+    <data-source name="payment_db@localhost" uuid="1a71c4a5-a8e9-4168-8693-24b102fc4c20">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" />
+      <user-name>root</user-name>
+      <schema-mapping />
+    </data-source>
+  </component>
+</project>

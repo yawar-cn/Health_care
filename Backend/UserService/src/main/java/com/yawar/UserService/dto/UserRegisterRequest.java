@@ -12,4 +12,6 @@ public class UserRegisterRequest {
     private String role;   // String → convert to Enum inside service
     private String specialization;
     private Integer experience;
+    private Double consultationFee;
+    private String photoUrl;
 }

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
-@FeignClient(name = "medicine-service")
+@FeignClient(name = "API-GATEWAY")
 public interface MedicineClient {
     @PostMapping("/medicines/bulk")
     List<MedicineDTO> getByIds(@RequestBody List<Long> ids);

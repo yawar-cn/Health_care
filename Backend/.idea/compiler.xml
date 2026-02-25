@@ -7,20 +7,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="notification-service" />
         <module name="service-registery" />
       </profile>
-      <profile name="Annotation profile for consultant_service" enabled="true">
+      <profile name="Annotation profile for payment-service" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.42/lombok-1.18.42.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.42/lombok-1.18.42.jar" />
         </processorPath>
         <module name="api-gateway" />
         <module name="payment-service" />
-        <module name="Auth-service" />
         <module name="UserService" />
+        <module name="Auth-service" />
         <module name="medicine-service" />
         <module name="consultant_service" />
       </profile>
@@ -33,6 +33,7 @@
       <module name="api-gateway" options="-parameters" />
       <module name="consultant_service" options="-parameters" />
       <module name="medicine-service" options="-parameters" />
+      <module name="notification-service" options="-parameters" />
       <module name="payment-service" options="-parameters" />
       <module name="service-registery" options="-parameters" />
     </option>
